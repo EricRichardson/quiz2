@@ -3,3 +3,6 @@
 <%= @request.email %>
 <%= @request.department %>
 <%= @request.message %>
+
+<%= link_to "Edit", edit_request_path(@request) %>
+<%= link_to "Delete", request_path(@request), method: "Delete", data: {confirm: "Are you sure?"} %>

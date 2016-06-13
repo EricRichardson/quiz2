@@ -1,6 +1,6 @@
 <h1>All requests</h1>
 <% @requests.each do |request| %>
-  <%= request.name %>
+  <%= link_to request.name, request_path(request) %>
   <%= request.email %>
   <%= request.department %>
   <%= request.message %>

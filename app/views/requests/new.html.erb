@@ -1,25 +1,3 @@
 <h1>Submit a Request</h1>
 
-<%= form_for @request do |f| %>
-<div>
-  Name: <%= f.text_field :name %>
-</div>
-<div>
-  Email: <%= f.email_field :email %>
-</div>
-<div>
-  Department:
-  <%= radio_button_tag(:department, "Sales") %>
-  <%= label_tag(:department_sales, "Sales") %>
-
-  <%= radio_button_tag(:department, "Marketing") %>
-  <%= label_tag(:department_marketing, "Marketing") %>
-
-  <%= radio_button_tag(:department, "Technical") %>
-  <%= label_tag(:department_technical, "Technical") %>
-</div>
-<div>
-  Message: <%= f.text_area :message %>
-</div>
-  <%= f.submit "Save" %>
-<% end %>
+<%= render "form" %>

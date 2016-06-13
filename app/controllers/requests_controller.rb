@@ -1,5 +1,9 @@
 class RequestsController < ApplicationController
-  before_action :find_request, only: [:show]
+  before_action :find_request, only: [:show, :edit, :update, :destroy]
+
+  def home
+  end
+
   def new
     @request = Request.new
   end
@@ -19,6 +23,23 @@ class RequestsController < ApplicationController
   def index
     @requests = Request.order(created_at: :desc)
   end
+
+  def edit
+  end
+
+  def update
+    if @request.update request_params
+      redirect_to request_path @request
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @request.destroy
+    redirect_to requests_path
+  end
+
 
   private
 
