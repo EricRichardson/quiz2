@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+
+<% @requests.each do |request| %>
+  <%= link_to request.name, request_path(request) %>
+  <%= request.email %>
+  <%= request.department %>
+  <%= request.message %>
+  Completed: <%= request.completed %>
+  <hr>
+<% end %>

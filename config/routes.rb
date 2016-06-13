@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'requests#home'
 
   resources :requests
+  post '/search' => 'requests#search', as: :search
   # get    '/requests/new' =>      'requests#new', as: :new_request
   # get    '/requests/:id' =>      'requests#show', as: :request
   # post   '/request' =>          'requests#create', as: :requests

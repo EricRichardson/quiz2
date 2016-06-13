@@ -35,20 +35,15 @@ class RequestsController < ApplicationController
     end
   end
 
-  # def complete
-  #   @request.completed = true
-  #   if @request.update request_params
-  #     redirect_to requests_path
-  #   else
-  #     render :edit
-  #   end
-  # end
-
   def destroy
     @request.destroy
     redirect_to requests_path
   end
 
+  def search
+    term = params[:search]
+    @requests = Request.search(term)
+  end
 
   private
 
