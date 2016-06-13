@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :find_request, only: [:show, :edit, :update, :destroy]
+  before_action :find_request, only: [:show, :edit, :update, :destroy, :complete]
 
   def home
   end
@@ -35,6 +35,15 @@ class RequestsController < ApplicationController
     end
   end
 
+  # def complete
+  #   @request.completed = true
+  #   if @request.update request_params
+  #     redirect_to requests_path
+  #   else
+  #     render :edit
+  #   end
+  # end
+
   def destroy
     @request.destroy
     redirect_to requests_path
@@ -44,7 +53,7 @@ class RequestsController < ApplicationController
   private
 
     def request_params
-      params.require(:request).permit(:name, :email, :department, :message )
+      params.require(:request).permit(:name, :email, :department, :message, :completed )
     end
 
     def find_request

@@ -1,8 +1,10 @@
 <h1>All requests</h1>
+<%= link_to "Make a request", new_request_path %>
 <% @requests.each do |request| %>
   <%= link_to request.name, request_path(request) %>
   <%= request.email %>
   <%= request.department %>
   <%= request.message %>
+  Completed: <%= request.completed %>
   <hr>
 <% end %>
