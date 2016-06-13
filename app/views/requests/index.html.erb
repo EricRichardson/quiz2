@@ -1,0 +1,8 @@
+<h1>All requests</h1>
+<% @requests.each do |request| %>
+  <%= request.name %>
+  <%= request.email %>
+  <%= request.department %>
+  <%= request.message %>
+  <hr>
+<% end %>
