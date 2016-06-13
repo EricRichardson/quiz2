@@ -1,12 +1,15 @@
 <h1>All requests</h1>
 <%= link_to "Make a request", new_request_path %>
-<%= paginate @requests %>
 <hr>
-<%  @requests.each do |request| %>
-  <%= link_to request.name, request_path(request) %>
-  <%= request.email %>
-  <%= request.department %>
-  <%= request.message %>
-  Completed: <%= request.completed %>
-  <hr>
-<% end %>
+<div class="requests">
+  <%  @requests.each do |request| %>
+    <h3><%= link_to request.name, request_path(request) %>'s request</h3>
+    <%= request.email %>
+    <%= request.department %>
+    <%= request.message %>
+    Completed: <%= request.completed %>
+    <hr>
+  <% end %>
+</div>
+
+<%= paginate @requests %>

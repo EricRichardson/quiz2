@@ -11,10 +11,11 @@
     <%= link_to "Home", root_path %> |
     <%= link_to "All Requests", requests_path %> |
     <%= link_to "New Request", new_request_path %>
-    <hr>
+    <span class="search"><%= render "shared/search_bar" %></span>
   </nav>
-<%= render "shared/search_bar" %>
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

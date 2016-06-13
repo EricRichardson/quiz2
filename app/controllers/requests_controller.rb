@@ -41,8 +41,8 @@ class RequestsController < ApplicationController
   end
 
   def search
-    term = params[:search]
-    @requests = Request.search(term).page params[:page]
+    @term = params[:search]
+    @requests = Request.search(@term).page params[:page]
   end
 
   private

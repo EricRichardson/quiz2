@@ -1,10 +1,11 @@
-<h1>Request</h1>
-<%= @request.name %>
-<%= @request.email %>
-<%= @request.department %>
-<%= @request.message %>
-Completed: <%= @request.completed %>
+<div class="show-post">
+  <h1><%= @request.name %>'s request</h1>
+  Email: <%= @request.email %><br>
+  Department: <%= @request.department %><br>
+  Message: <%= @request.message %><br>
+  Completed: <%= @request.completed %><br>
 
-<%= link_to "Edit", edit_request_path(@request) %>
+  <%= link_to "Edit", edit_request_path(@request) %>
 
-<%= link_to "Delete", request_path(@request), method: "Delete", data: {confirm: "Are you sure?"} %>
+  <%= link_to "Delete", request_path(@request), method: "Delete", data: {confirm: "Are you sure?"} %>
+</div>
