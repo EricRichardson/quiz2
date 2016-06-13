@@ -3,9 +3,9 @@
 <div class="requests">
   <% @requests.each do |request| %>
     <h2><%= link_to request.name, request_path(request) %></h2>
-    <%= request.email %>
-    <%= request.department %>
-    <%= request.message %>
+    Email: <%= request.email %><br>
+    Department: <%= request.department %><br>
+    Message: <%= request.message.truncate(50) %><br>
     Completed: <%= request.completed %>
     <hr>
   <% end %>
