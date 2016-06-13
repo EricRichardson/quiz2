@@ -1,1 +1,1 @@
-SELECT COUNT(*) AS request_count, department FROM requests GROUP BY department ORDER BY department
+SELECT COUNT(*) AS request_count, department FROM requests GROUP BY department ORDER BY department;
