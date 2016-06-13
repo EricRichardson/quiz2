@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.order(created_at: :desc)
+    @requests = Request.order(created_at: :desc).page params[:page]
   end
 
   def edit
@@ -42,7 +42,7 @@ class RequestsController < ApplicationController
 
   def search
     term = params[:search]
-    @requests = Request.search(term)
+    @requests = Request.search(term).page params[:page]
   end
 
   private
