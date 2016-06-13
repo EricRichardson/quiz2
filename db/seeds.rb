@@ -6,9 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-1000.times do
+333.times do
   Request.create name: Faker::Hacker.verb,
                  email: Faker::Internet.email,
                  department: "Sales",
+                 message: Faker::Hacker.say_something_smart
+end
+
+333.times do
+  Request.create name: Faker::Hacker.verb,
+                 email: Faker::Internet.email,
+                 department: "Marketing",
+                 message: Faker::Hacker.say_something_smart
+end
+
+334.times do
+  Request.create name: Faker::Hacker.verb,
+                 email: Faker::Internet.email,
+                 department: "Technical",
                  message: Faker::Hacker.say_something_smart
 end
